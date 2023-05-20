@@ -1,0 +1,14 @@
+.card-img-top{
+    height: 50%;
+    width: 50%;
+}
+.card{
+    align-items: center;
+}
+.btn{
+    align-items: center;
+}
+
+.titulo{
+    text-align: center;
+}

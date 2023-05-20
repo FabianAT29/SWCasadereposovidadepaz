@@ -7,9 +7,9 @@ $pacientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($pacientes);
 ?>
 
-<div class="card">
+<div class="card-1">
     <div class="card-header">
-        Lista de Pacientes
+    &nbsp; &nbsp; &nbsp; Lista de Pacientes
     </div>
     <div class="p-4">
         <div class="table align-middle">

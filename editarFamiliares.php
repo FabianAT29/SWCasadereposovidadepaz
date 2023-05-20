@@ -18,7 +18,7 @@ $familiares = $sentencia->fetch(PDO::FETCH_OBJ);
 <div class="contair mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card-edit">
                 <div class="card-header">
                     Editar datos:
                 </div>

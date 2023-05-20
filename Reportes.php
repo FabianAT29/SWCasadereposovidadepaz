@@ -1,75 +1,59 @@
 <?php
-
 require('Fpdf/fpdf.php');
 
-class PDF extends Fpdf{
+class PDF extends FPDF
+{
+// Cabecera de página
+function Header()
+{
+	
+    // Arial bold 15
+    $this->SetFont('Arial','B',16);
+    // Movernos a la derecha
+    $this->Cell(60);
+    // Título
+    $this->Cell(70,10,'Reporte de Pacientes ',0,0,'C');
+    // Salto de línea
+    $this->Ln(20);
 
-    //Cabecera de Pagina
-    function Header()
-    {
-        //Logo
-        $this->Cell(-200);
-        $this->Image('Logo-VidadePaz.jpeg',0,-10,220);
-        //Letra
-        $this->Ln(10);
-        $this->SetFont('Arial','B',10);
-
-        $this->Cell(-200);
-
-    }
-
-    function Footer()
-    {
-        $this->SetFillColor(20,05,19);
-        $this->Rect(0,270,270,30,'F');
-        $this->SetY(-20);//sube las letras
-        $this->SetFont('Arial','',10);
-        $this->SetTextColor(255,255,255);
-        $this->SetX(90);
-        $this->Write(5,'  Casa de Reposo Vida de Paz');
-        $this->Ln();
-
-    }
+    $this->Cell(80,10,'Nombre',1,0,'C',0);
+	$this->Cell(50,10,'Precio',1,0,'C',0);
+	$this->Cell(50,10,'Stock',1,1,'C',0);
 }
-    $pdf = new PDF();
-    $pdf -> AliasNbPages();
-    $pdf ->AddPage();
-    $pdf ->SetFont('Arial','',10);
 
-    $pdf->SetY(70);
-    $pdf->SetX(45);
-    $pdf->SetTextColor(255,255,255);
-    $pdf->SetFillColor(79,59,120);
-    $pdf->Cell(40,6, 'Nombre',0,0,'C',1);
-    $pdf->Cell(60,6, 'Apellido Paterno',0,0,'C',1);
-    $pdf->Cell(35,6, 'Apellido Materno',0,0,'C',1);
-    $pdf->Cell(35,6, 'Fecha de Nacimiento',0,0,'C',1);
-    $pdf->Cell(35,6, 'DNI',0,0,'C',1);
-    $pdf->Cell(35,6, 'Edad',0,0,'C',1);
-    $pdf->Cell(35,6, 'Tipo de Servicio',0,0,'C',1);
-    $pdf->Cell(35,6, 'Duración',0,1,'C',1);
+// Pie de página
+function Footer()
+{
+    // Posición: a 1,5 cm del final
+    $this->SetY(-15);
+    // Arial italic 8
+    $this->SetFont('Arial','I',8);
+    // Número de página
+    $this->Cell(0,10,utf8_decode('Página') .$this->PageNo().'/{nb}',0,0,'C');
+}
+}
 
-    include('model/conexion.php');
-    require('model/conexion.php');
+include_once "model/conexion.php";
+$sentencia = $bd->query("select * from pacientes");
+$pacientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
-    $sentencia = $bd->query("select * from pacientes");
-    $pacientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+foreach ($pacientes as $dato) {
 
-    $pdf->SetTextColor(0,0,0);
-    $pdf->SetFillColor(240,245,255);
+$pdf = new PDF();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',10);
 
-    while($sentencia->fetchAll(PDO::FETCH_OBJ)){
-        $pdf->SetX(45);
-        $pdf->Cell(40,6, 'nombre',0,0, 'C',1);
-        $pdf->Cell(60,6, 'apellidop',0,0, 'C',1);
-        $pdf->Cell(35,6, 'apellidom',0,0, 'C',1);
-        $pdf->Cell(35,6, 'fecha',0,0, 'C',1);
-        $pdf->Cell(35,6, 'dni',0,0, 'C',1);
-        $pdf->Cell(35,6, 'edad',0,0, 'C',1);
-        $pdf->Cell(35,6, 'Tipo',0,0, 'C',1);
-        $pdf->Cell(35,6, 'duracion',0,0, 'C',1);
-    }
-    $pdf->Output();
+echo $dato->codigo;
+echo $dato->nombre;
+echo $dato->apellidop; 
+echo $dato->apellidom; 
+echo $dato->fecha;
+echo $dato->dni;
+echo $dato->edad;
+echo $dato->Tipo;
+echo $dato->duracion;
+}
 
-
+	$pdf->Output();
 ?>

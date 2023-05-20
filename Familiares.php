@@ -66,6 +66,36 @@ if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'eliminado') {
 }
 ?>
 <!-- fin de alertas-->
+<h2 class="titulo">
+    Bienvenido al módulo Familiares
+</h2>
+
+<div class="card-group">
+    <div class="card">
+        <img class="card-img-top" src="icons/person-plus.svg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Registrar Familiares</h5>
+            <p class="card-text">En este apartado podrás registrar todos los datos de los familiares.</p>
+            <a href="RegistroFamiliares.php" class="btn btn-primary">Ir a Registrar</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="icons/person-lines-fill.svg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Ver lista de Familiares</h5>
+            <p class="card-text">En este apartado podrás ver el listado todos los familiares registrados.</p>
+            <a href="ListadoFamiliares.php" class="btn btn-primary">Ir a ver la lista de Pacientes</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="icons/filetype-pdf.svg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Generar Reporte</h5>
+            <p class="card-text">En este apartado podrás generar un reporte de todos los familiares registrados.</p>
+            <a href="Fpdf/ReportePacientes.php" class="btn btn-primary" target="_blank">Ir generar Reporte</a>
+        </div>
+    </div>
+</div>
 
 
 <!--REDIRECIONAMIENTO PACIENTES
