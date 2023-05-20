@@ -1,5 +1,8 @@
 <?php include 'template/header.php' ?>
 
+<h2 class="titulo">
+    Bienvenido al Sistema de Casa de Reposo Vida de Paz
+</h2>
 <div class="card-group">
     <div class="card">
         <img class="card-img-top" src="icons/person-plus.svg" alt="Card image cap">

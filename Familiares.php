@@ -92,7 +92,7 @@ if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'eliminado') {
         <div class="card-body">
             <h5 class="card-title">Generar Reporte</h5>
             <p class="card-text">En este apartado podrás generar un reporte de todos los familiares registrados.</p>
-            <a href="Fpdf/ReportePacientes.php" class="btn btn-primary" target="_blank">Ir generar Reporte</a>
+            <a href="Fpdf/ReporteFamiliares.php" class="btn btn-primary" target="_blank">Ir generar Reporte</a>
         </div>
     </div>
 </div>

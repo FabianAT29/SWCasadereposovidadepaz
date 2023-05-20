@@ -1,9 +1,9 @@
 <?php include 'template/headerFamiliares.php' ?>
 
 <div class="col-sm">
-    <div class="card">
+    <div class="card-1">
         <div class="card-header">
-            Ingresar datos:
+        &nbsp;&nbsp;&nbsp; Ingresar datos:
         </div>
         <form class="p-4" method="POST" action="RegistrarFamiliares.php">
             <div class="mb-3">

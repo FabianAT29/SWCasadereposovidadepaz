@@ -31,7 +31,7 @@
             </li>
             
             <li class="nav-item ">
-                <a class="nav-link" href="Fpdf/ReportePacientes.php" target="_blank">Generar Reporte</a>
+                <a class="nav-link" href="Fpdf/ReporteFamiliares.php" target="_blank">Generar Reporte</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="index.php">Regresar al Inicio</a>

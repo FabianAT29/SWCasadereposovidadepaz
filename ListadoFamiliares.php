@@ -7,9 +7,9 @@ $familiares = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($familiares);
 ?>
 
-<div class="card">
+<div class="card-1">
     <div class="card-header">
-        Lista de Familiares
+    &nbsp;&nbsp;&nbsp;Lista de Familiares
     </div>
     <div class="p-4">
         <div class="table align-middle">
@@ -61,6 +61,8 @@ $familiares = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 </tbody>
             </table>
             <div class="d-grid">
+                <a href="Fpdf/ReporteFamiliares.php" target="_blank" class="btn btn-info">Generar Reporte</a>
+                <br>
                 <a class="btn btn-secondary" type="button" href="Familiares.php">Regresar al inicio</a>
             </div>
         </div>
