@@ -15,8 +15,8 @@ $telefono = $_POST["txtTelefono"];
 $dnipaciente = $_POST["txtDniPaciente"];
 
 $sentencia = $bd->prepare("UPDATE familiares SET nombre = ?, apellidop= ?,
-apellidom = ?, dni= ?, correo = ?, edad = ?, telefono = ?, dnipaciente = ? WHERE codigo = ?;");
-$resultado = $sentencia->execute([$nombre, $apellidop, $apellidom, $dni, $dni, $correo, $telefono, $dnipaciente, $codigo]);
+apellidom = ?, dni= ?, correo = ?, telefono = ?, dnipaciente = ? WHERE codigo = ?;");
+$resultado = $sentencia->execute([$nombre, $apellidop, $apellidom, $dni,$correo, $telefono, $dnipaciente, $codigo]);
 
 if($resultado === TRUE){
     header('Location: ListadoFamiliares.php?mensaje=editado');

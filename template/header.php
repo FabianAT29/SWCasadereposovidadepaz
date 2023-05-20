@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="index.php">
-        <img src="icons/Logo-VidadePaz.jpeg" width="20%" height="20%" class="d-inline-block align-center" alt="">
+        <img src="Logo-VidadePaz.jpeg" width="20%" height="20%" class="d-inline-block align-center" alt="">
         Casa de Reposo Vida de Paz
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
